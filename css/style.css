@@ -111,8 +111,10 @@ a {
   display: flex;
   flex-direction: row;
   position: absolute;
-  gap: 15px;
-  right: 12px
+  gap: 10px;
+  right: 12px;
+  align-items: center;
+  /* Add this to vertically center the buttons */
 }
 
 .nav-header>.actions>button {
@@ -1429,6 +1431,67 @@ circle {
     opacity: 0;
     transform: translate(0, 20px)
   }
+}
+
+.language-switcher {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+}
+
+.language-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  /* Move menu slightly below button */
+  right: 0;
+  /* Align with right edge of button */
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  z-index: 1000;
+}
+
+.language-menu.show {
+  display: block;
+}
+
+.language-menu button {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: "Mona Sans";
+  font-stretch: 150%;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #000;
+  transition: background-color 0.2s ease;
+}
+
+.language-menu button:hover {
+  background-color: #f5f5f5;
+}
+
+.language-switcher .blue {
+  min-width: 50px;
+  height: 50px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-switcher .blue span {
+  font-size: 0.8rem;
+  font-family: 'Mona Sans';
+  font-stretch: 150%;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 1600px) {

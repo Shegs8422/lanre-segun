@@ -356,3 +356,32 @@ document.addEventListener("DOMContentLoaded", function () {
   updateCardPositions();
   window.addEventListener("resize", updateCardPositions);
 });
+
+function toggleLanguageMenu() {
+  const menu = document.querySelector(".language-menu");
+  menu.classList.toggle("show");
+}
+
+function changeLanguage(lang) {
+  const currentLang = document.getElementById("currentLang");
+  currentLang.textContent = lang.toUpperCase();
+
+  if (lang === "es") {
+    window.location.href = "/es/";
+  } else {
+    window.location.href = "/";
+  }
+
+  const menu = document.querySelector(".language-menu");
+  menu.classList.remove("show");
+}
+
+// Close menu when clicking outside
+document.addEventListener("click", function (event) {
+  const switcher = document.querySelector(".language-switcher");
+  const menu = document.querySelector(".language-menu");
+
+  if (!switcher.contains(event.target)) {
+    menu.classList.remove("show");
+  }
+});
