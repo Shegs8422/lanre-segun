@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById("downloadCV").addEventListener("click", function () {
   window.open(
-    "https://drive.google.com/file/d/1q3hTD0V2WOOh_XwoQc-4rZ44r4KF42if/view?usp=sharing",
+    "https://docs.google.com/document/d/1VoYzcoiVrXtcNsLMyYEJ6kK2SBzweIPnsScGb1mrvyQ/edit?usp=sharing",
     "_blank"
   );
 });
