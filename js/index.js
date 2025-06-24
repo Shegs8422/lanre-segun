@@ -46,9 +46,8 @@ if (!/Mobi|Android/i.test(navigator.userAgent)) {
     currentY += (targetY - currentY) * 0.015;
 
     // Apply transformation
-    grid.style.transform = `translate(${currentX * 300}px, ${
-      currentY * 300
-    }px)`;
+    grid.style.transform = `translate(${currentX * 300}px, ${currentY * 300
+      }px)`;
 
     requestAnimationFrame(animate);
   }
@@ -309,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById("downloadCV").addEventListener("click", function () {
   window.open(
-    "https://docs.google.com/document/d/1VoYzcoiVrXtcNsLMyYEJ6kK2SBzweIPnsScGb1mrvyQ/edit?usp=sharing",
+    "https://drive.google.com/file/d/1hDdeeyNeD0tZcJIK4aFcLqayF7-_HmrJ/view?usp=sharing",
     "_blank"
   );
 });
