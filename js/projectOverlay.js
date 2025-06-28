@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
   overlay.innerHTML = `
     <div class="overlay-content" style="
       background: rgba(255,255,255,0.97); 
-      max-width: 750px; width: 96vw; padding: 0 0 2.5rem 0; border-radius: 32px; 
+      max-width: 850px; width: 96vw; padding: 0 0 2.5rem 0; border-radius: 32px; 
       box-shadow: 0 8px 48px 0 #0003, 0 1.5px 8px #0001; 
-      position: relative; text-align: left; min-height: 440px; 
+      position: relative; text-align: left; min-height: 480px; 
       overflow: hidden; display: flex; flex-direction: column; align-items: stretch;
       backdrop-filter: blur(22px) saturate(1.1);
       animation: overlayPopIn 0.4s cubic-bezier(.6,-0.28,.74,.05) 1;
@@ -31,15 +31,28 @@ document.addEventListener("DOMContentLoaded", function () {
         <span style="font-weight:700;line-height:1;">&times;</span>
       </button>
       <div style="display:flex;gap:2.2rem;align-items:flex-start;flex-wrap:wrap;padding:0 2.2rem;">
-        <img class="overlay-img" src="" alt="Project image" style="width:220px;max-height:220px;object-fit:cover;border-radius:18px;box-shadow:0 2px 16px #0001;margin-bottom:1.2rem;flex-shrink:0;background:#f5f7fa;" />
-        <div style="flex:1;min-width:220px;display:flex;flex-direction:column;align-items:flex-start;">
-          <h2 class="overlay-title" style="font-size:2.3rem;margin:0 0 0.5rem 0;font-weight:800;color:#222;letter-spacing:-1px;"></h2>
-          <p class="overlay-desc" style="font-size:1.15rem;margin:0 0 1.2rem 0;color:#444;line-height:1.6;"></p>
-          <div class="overlay-tech" style="margin-bottom:1.2rem;font-size:1rem;font-weight:600;"><span style="color:#222;font-weight:700;">Technologies:</span> <span class="tech-list">-</span></div>
-          <div class="overlay-features" style="margin-bottom:1.2rem;width:100%;"><span style="color:#222;font-weight:700;">Key Features:</span>
+        <!-- Left column -->
+        <div style="flex:0 0 260px;display:flex;flex-direction:column;align-items:center;min-width:220px;">
+          <img class="overlay-img" src="" alt="Project image" style="width:220px;max-height:180px;object-fit:cover;border-radius:18px;box-shadow:0 2px 16px #0001;margin-bottom:1.2rem;background:#f5f7fa;" />
+          <div style="width:100%;margin-top:1.2rem;">
+            <div style="font-size:1.05rem;font-weight:700;margin-bottom:0.5rem;">Tech Stack</div>
+            <div class="overlay-tech-logos" style="display:flex;gap:0.7rem;align-items:center;">
+              <!-- Tech logos will be injected here -->
+            </div>
+          </div>
+        </div>
+        <!-- Right column -->
+        <div style="flex:1;min-width:220px;display:flex;flex-direction:column;align-items:flex-start;gap:1.1rem;">
+          <h2 class="overlay-title" style="font-size:2.1rem;margin:0 0 0.2rem 0;font-weight:800;color:#222;letter-spacing:-1px;"></h2>
+          <div style="width:100%;">
+            <p class="overlay-desc" style="font-size:1.13rem;margin:0 0 0.3rem 0;color:#444;line-height:1.6;max-height:3.2em;overflow:hidden;position:relative;" data-full="" data-short=""></p>
+            <button class="desc-more-btn" style="display:none;font-size:0.98rem;color:#1a73e8;background:none;border:none;cursor:pointer;padding:0;margin:0;">More</button>
+          </div>
+          <div class="overlay-features-box" style="background:#f7f8fa;border-radius:14px;padding:1.1rem 1.2rem;width:100%;box-shadow:0 1px 6px #0001;">
+            <div style="color:#222;font-weight:700;margin-bottom:0.3rem;">Features & Scope of Project</div>
             <ul class="feature-list" style="margin:0 0 0 1.2rem;padding:0;color:#444;font-size:1rem;line-height:1.7;"></ul>
           </div>
-          <a class="overlay-link" href="#" target="_blank" style="display:inline-block;margin-top:0.5rem;padding:0.7rem 1.5rem;background:#222;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;box-shadow:0 2px 8px #0001;transition:background 0.2s;">View Project</a>
+          <a class="overlay-link" href="#" target="_blank" style="align-self:flex-end;margin-top:0.7rem;padding:0.7rem 1.5rem;background:#222;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;box-shadow:0 2px 8px #0001;transition:background 0.2s;">View Project</a>
         </div>
       </div>
     </div>
@@ -58,59 +71,76 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.style.opacity = "0";
   });
 
-  projects.forEach((project, idx) => {
-    project.setAttribute("data-project-idx", idx);
-    project.addEventListener("click", function () {
-      const img = project.querySelector("img").getAttribute("src");
-      const title = project.querySelector("h2").textContent;
-      const desc = project.querySelector("p").textContent;
-      // Example data for demonstration, you should replace with real data or fetch dynamically
-      const techs = [
-        ["React, Node.js", "Responsive Web, Styled Components"],
-        ["HTML, CSS, JS", "Figma, Responsive Design"],
-        ["React, Firebase", "Socket.io, Real-time"],
-        ["Vue.js, Chart.js", "API Integration"],
-        ["OpenWeatherMap API, JS", "Geolocation"],
-        ["Next.js, Markdown", "Custom Themes"],
-        ["React, Redux", "Chart.js, LocalStorage"],
-        ["React, Socket.io", "Node.js, MongoDB"],
-      ];
-      const features = [
-        [
-          "User authentication",
-          "Product search",
-          "Shopping cart",
-          "Order tracking",
-        ],
-        ["Portfolio gallery", "Contact form", "Mobile friendly"],
-        ["Task assignment", "Real-time updates", "Team collaboration"],
-        ["Social analytics", "Custom dashboards", "Export reports"],
-        ["Live weather", "Location-based forecast", "Clean UI"],
-        ["Markdown editor", "Custom themes", "SEO optimized"],
-        ["Expense tracking", "Budget planning", "Data visualization"],
-        ["Group chat", "Private messaging", "Notifications"],
-      ];
-      const links = ["#", "#", "#", "#", "#", "#", "#", "#"];
-      overlay.querySelector(".overlay-img").src = img;
-      overlay.querySelector(".overlay-title").textContent = title;
-      overlay.querySelector(".overlay-desc").textContent = desc;
-      overlay.querySelector(".tech-list").textContent = techs[idx]
-        ? techs[idx][0]
-        : "-";
-      const featureList = overlay.querySelector(".feature-list");
-      featureList.innerHTML = "";
-      (features[idx] || []).forEach((f) => {
-        const li = document.createElement("li");
-        li.textContent = f;
-        featureList.appendChild(li);
+  // Fetch project data from projects.json
+  let projectData = [];
+  fetch("projects.json")
+    .then((response) => response.json())
+    .then((data) => {
+      projectData = data.projects || [];
+      // Attach event listeners after data is loaded
+      projects.forEach((project, idx) => {
+        project.setAttribute("data-project-idx", idx);
+        project.addEventListener("click", function () {
+          const pdata = projectData[idx];
+          if (!pdata) return;
+          overlay.querySelector(".overlay-img").src = pdata.preview;
+          overlay.querySelector(".overlay-title").textContent = pdata.name;
+          // Description expand/collapse logic
+          const descElem = overlay.querySelector(".overlay-desc");
+          const moreBtn = overlay.querySelector(".desc-more-btn");
+          descElem.textContent = pdata.description;
+          descElem.setAttribute("data-full", pdata.description);
+          let shortDesc = pdata.description;
+          if (pdata.description.length > 120) {
+            shortDesc = pdata.description.slice(0, 120) + "...";
+            descElem.textContent = shortDesc;
+            descElem.setAttribute("data-short", shortDesc);
+            moreBtn.style.display = "inline";
+            moreBtn.textContent = "More";
+          } else {
+            moreBtn.style.display = "none";
+          }
+          moreBtn.onclick = function () {
+            if (moreBtn.textContent === "More") {
+              descElem.textContent = descElem.getAttribute("data-full");
+              moreBtn.textContent = "Less";
+            } else {
+              descElem.textContent = descElem.getAttribute("data-short");
+              moreBtn.textContent = "More";
+            }
+          };
+          // Tech stack logos
+          const techLogoDiv = overlay.querySelector(".overlay-tech-logos");
+          techLogoDiv.innerHTML = "";
+          (pdata.techStack || []).forEach((t) => {
+            const img = document.createElement("img");
+            img.src = t.logo;
+            img.alt = t.name;
+            img.title = t.name;
+            img.style.width = "36px";
+            img.style.height = "36px";
+            img.style.objectFit = "contain";
+            img.style.borderRadius = "50%";
+            img.style.background = "#fff";
+            img.style.boxShadow = "0 1px 4px #0001";
+            techLogoDiv.appendChild(img);
+          });
+          // Features
+          const featureList = overlay.querySelector(".feature-list");
+          featureList.innerHTML = "";
+          (pdata.features || []).forEach((f) => {
+            const li = document.createElement("li");
+            li.textContent = f;
+            featureList.appendChild(li);
+          });
+          overlay.querySelector(".overlay-link").href = pdata.link || "#";
+          overlay.style.display = "flex";
+          setTimeout(() => {
+            overlay.style.opacity = "1";
+          }, 10);
+        });
       });
-      overlay.querySelector(".overlay-link").href = links[idx] || "#";
-      overlay.style.display = "flex";
-      setTimeout(() => {
-        overlay.style.opacity = "1";
-      }, 10);
     });
-  });
 
   // Optional: close overlay on outside click
   overlay.addEventListener("click", function (e) {

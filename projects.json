@@ -1,0 +1,70 @@
+{
+  "projects": [
+    {
+      "id": "project1",
+      "name": "SwiftServe POS Dashboard",
+      "description": "The SwiftServe POS Dashboard is a modern, intuitive, and feature-rich Point-of-Sale interface designed to streamline restaurant and food service operations. Created with a focus on user experience (UX) and efficiency, this dashboard provides a comprehensive view of orders, popular items, and sales, empowering staff to manage transactions with speed and accuracy. Its clean layout and clear categorization aim to reduce training time and increase operational fluidity in fast-paced environments.",
+      "preview": "images/layout-3.png",
+      "techStack": [{ "name": "FIGMA", "logo": "images/figma.svg" }],
+      "features": [
+        "Intuitive Order Management",
+        "Quick Search Functionality",
+        "Dynamic Category Filtering",
+        "Order Summary and Total"
+      ],
+      "link": "#"
+    },
+    {
+      "id": "project2",
+      "name": "Skolta E-commerce Website",
+      "description": "Skolta is a sleek and dynamic e-commerce platform specializing in exclusive sneaker drops, limited editions, and curated footwear. Designed with a modern aesthetic and a focus on user engagement, the website offers a seamless shopping experience for sneaker enthusiasts. From its prominent hero section showcasing new arrivals and special offers to a clear display of popular brands, Skolta is built to captivate visitors and drive conversions, enabling users to purchase limited-edition sneakers and stay ahead of the fashion curve.",
+      "preview": "images/layout-1.png",
+      "techStack": [
+        { "name": "FIGMA", "logo": "images/figma.svg" },
+        { "name": "PHOTOSHOP", "logo": "images/photoshop.svg" }
+      ],
+      "features": [
+        "Responsive Design",
+        "Product Display",
+        "User-Friendly Navigation",
+        "Secure Checkout"
+      ],
+      "link": "#"
+    },
+    {
+      "id": "project3",
+      "name": "Kings Estate Hotel Website",
+      "description": "The Kings Estate Hotel website design presents a serene and inviting digital gateway to a place where nature, tradition & care meet. This elegant landing page is crafted to immerse visitors in the tranquil ambiance of the resort, featuring a stunning visual of the property alongside a streamlined booking experience. The design emphasizes simplicity and user-friendliness, ensuring potential guests can easily explore the hotel's offerings and secure their stay with minimal effort.",
+      "preview": "images/layout-4.png",
+      "techStack": [
+        { "name": "FIGMA", "logo": "images/figma.svg" },
+        { "name": "PHOTOSHOP", "logo": "images/photoshop.svg" }
+      ],
+      "features": [
+        "Immersive Hero Section",
+        "Integrated Booking Widget",
+        "User-Centric Design"
+      ],
+      "link": "#"
+    },
+    {
+      "id": "project4",
+      "name": "Rota SAAS Websitee",
+      "description": "Rota is a Rutland Web Design based website known for clients satisfaction on website design and developement.",
+      "preview": "images/layout-5.png",
+      "techStack": [
+        { "name": "FIGMA", "logo": "images/figma.svg" },
+        { "name": "PHOTOSHOP", "logo": "images/photoshop.svg" },
+        { "name": "HTML", "logo": "images/html.svg" },
+        { "name": "CSS", "logo": "images/css.svg" },
+        { "name": "JAVASCRIPT", "logo": "images/javascript.svg" }
+      ],
+      "features": [
+        "Responsive Design",
+        "User-Friendly Navigation",
+        "Secure Checkout"
+      ],
+      "link": "#"
+    }
+  ]
+}
