@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div style="flex:0 0 260px;display:flex;flex-direction:column;align-items:center;min-width:220px;">
           <img class="overlay-img" src="" alt="Project image" style="width:220px;max-height:180px;object-fit:cover;border-radius:18px;box-shadow:0 2px 16px #0001;margin-bottom:1.2rem;background:#f5f7fa;" />
           <div style="width:100%;margin-top:1.2rem;">
-            <div style="font-size:1.05rem;font-weight:700;margin-bottom:0.5rem;">Tech Stack</div>
+            <div style="font-size:1.05rem;font-weight:700;margin-bottom:0.5rem;">Tools</div>
             <div class="overlay-tech-logos" style="display:flex;gap:0.7rem;align-items:center;">
               <!-- Tech logos will be injected here -->
             </div>
@@ -120,9 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
             img.style.width = "36px";
             img.style.height = "36px";
             img.style.objectFit = "contain";
-            img.style.borderRadius = "50%";
-            img.style.background = "#fff";
-            img.style.boxShadow = "0 1px 4px #0001";
             techLogoDiv.appendChild(img);
           });
           // Features

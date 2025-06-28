@@ -55,8 +55,8 @@
       "techStack": [
         { "name": "FIGMA", "logo": "images/figma.svg" },
         { "name": "PHOTOSHOP", "logo": "images/photoshop.svg" },
-        { "name": "HTML", "logo": "images/html.svg" },
-        { "name": "CSS", "logo": "images/css.svg" },
+        { "name": "HTML", "logo": "images/web.svg" },
+        { "name": "TAILWIND", "logo": "images/tailwindcss.svg" },
         { "name": "JAVASCRIPT", "logo": "images/javascript.svg" }
       ],
       "features": [
